@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,6 +22,7 @@
       background-attachment: fixed;
       background-position: center;
       background-color: var(--negro);
+      color: var(--blanco);
       color: var(--blanco);
     }
 
@@ -53,6 +53,25 @@
       padding: 4rem 2rem;
     }
 
+    ¿Cómo lo hacemos?
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: var(--dorado);
+}
+
+    <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+    <img src="https://i.postimg.cc/HnmWjDcd/Whats-App-Image-2025-04-15-at-7-20-25-PM.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+    <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+  </div>
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: var(--blanco);
+}
+
     .cta-button {
       background-color: var(--dorado);
       color: var(--negro);
@@ -79,9 +98,7 @@
       border-radius: 10px;
       flex: 1 1 250px;
       color: var(--blanco);
-      border: 1px solid var(--dorado);
-      box-shadow: 0 0 12px var(--dorado);
-      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
     }
 
     .card strong {
@@ -109,14 +126,25 @@
       color: var(--dorado);
     }
 
-    .check-item {
-      border: 1px solid var(--dorado);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 12px var(--dorado);
-      margin: 0.5rem;
-      background-color: #111;
-    }
+    <div class="card" style="background-color: #111; padding: 1rem; border-radius: 10px; flex: 0 0 180px; min-width: 180px; max-width: 180px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 10px var(--dorado); text-align: center;">
+  <img src="https://i.postimg.cc/84917d43-d644-4c33-ad6e-a884b92aa9d1.png" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+  <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+</div>
+
+.check-item {
+  border: 1px solid var(--dorado);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px var(--dorado);
+  margin: 0.5rem;
+}
+
+    <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+  <img src="https://i.postimg.cc/HnmWjDcd/Whats-App-Image-2025-04-15-at-7-20-25-PM.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+  <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+</div>
+
+  box-shadow: 0 0 12px var(--dorado);}
 
     .gallery {
       display: grid;
@@ -181,7 +209,8 @@
       font-size: 0.9rem;
       color: var(--dorado-claro);
     }
-
+  </style>
+<style>
     .roadmap-carousel {
       position: relative;
       overflow: hidden;
@@ -192,6 +221,11 @@
       gap: 1rem;
       animation: scrollLoop 30s linear infinite;
     }
+
+    $1
+  border: 1px solid var(--dorado);
+  box-shadow: 0 0 12px var(--dorado);
+}
 
     .roadmap-carousel .card:hover {
       background-color: var(--dorado);
@@ -223,45 +257,191 @@
       cursor: pointer;
       border-radius: 5px;
     }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.querySelector(".roadmap-carousel-track");
-      const prevBtn = document.querySelector("#prevSlide");
-      const nextBtn = document.querySelector("#nextSlide");
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".roadmap-carousel-track");
+    const prevBtn = document.querySelector("#prevSlide");
+    const nextBtn = document.querySelector("#nextSlide");
 
-      let autoplayInterval;
-      let autoplayStopped = false;
+    let autoplayInterval;
+    let autoplayStopped = false;
 
-      function startAutoplay() {
-        if (autoplayStopped) return;
-        autoplayInterval = setInterval(() => {
-          track.append(track.firstElementChild);
-        }, 3000);
-      }
-
-      function stopAutoplay() {
-        clearInterval(autoplayInterval);
-        autoplayStopped = true;
-        track.style.animation = "none";
-      }
-
-      track.addEventListener("mouseover", stopAutoplay);
-      prevBtn.addEventListener("click", () => {
-        track.prepend(track.lastElementChild);
-        stopAutoplay();
-      });
-
-      nextBtn.addEventListener("click", () => {
+    function startAutoplay() {
+      if (autoplayStopped) return;
+      autoplayInterval = setInterval(() => {
         track.append(track.firstElementChild);
-        stopAutoplay();
-      });
+      }, 3000);
+    }
 
-      startAutoplay();
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+      autoplayStopped = true;
+      track.style.animation = "none";
+    }
+
+    track.addEventListener("mouseover", stopAutoplay);
+    prevBtn.addEventListener("click", () => {
+      track.prepend(track.lastElementChild);
+      stopAutoplay();
     });
-  </script>
+
+    nextBtn.addEventListener("click", () => {
+      track.append(track.firstElementChild);
+      stopAutoplay();
+    });
+
+    startAutoplay();
+  });
+</script>
 </head>
 <body>
-  <!-- Aquí iría el contenido del <body> que me pasaste -->
+  <section style="background-color: #111; padding: 1.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--dorado);">
+  <span style="color: var(--blanco); font-size: 0.95rem;">¿Necesitás ayuda? <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Hacé click para contactarnos</a></span>
+  <img src="https://i.postimg.cc/L5VNz2nD/logo-principal.png" alt="Logo ClimberHost" style="height: 75px;">
+  <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; font-size: 0.95rem;">Agendá tu llamada estratégica gratuita ↗</a>
+</section>
+  
+
+  <section class="hero container">
+    <h1 style="background-color: rgba(0, 0, 0, 0.6); padding: 1rem; border-radius: 8px; display: inline-block;"><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">¡Atención Propietarios y Creadores de Experiencias!</span></h1>
+    <p style="background-color: rgba(0, 0, 0, 0.6); padding: 1rem; border-radius: 8px; display: inline-block; max-width: 800px; margin: 1rem auto;"><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;"><span style="font-size: 1.2rem; background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Multiplicá tus ingresos en 90 días: optimizamos, automatizamos y posicionamos tu alojamiento para que vos solo cobres y disfrutes de tu tiempo libre.</span></span></p>
+    <a href="#calendly" class="cta-button" style="background-color: var(--dorado); color: var(--negro); padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 8px; display: inline-block; font-size: 1rem; box-shadow: 0 0 10px var(--dorado);">▶ Ver cómo funciona</a>
+  </section>
+
+  <section class="container section">
+  <h2 style="background-color: rgba(0, 0, 0, 0.6); padding: 0.75rem 1rem; border-radius: 8px; display: inline-block;">¿Cómo lo hacemos?</h2>
+  <div class="roadmap-carousel">
+    <div class="carousel-buttons">
+      <button id="prevSlide">◀</button>
+      <button id="nextSlide">▶</button>
+    </div>
+    <div class="roadmap-carousel-track">
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3 style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 6px; display: inline-block;">1. Recolección de información</h3>
+        <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3>2. Estudio personalizado</h3>
+        <p>Analizamos el mercado, hacemos un FODA y detectamos tu huésped ideal.</p>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3>3. Optimización del anuncio</h3>
+        <p>Mejoramos la descripción con copywriting, imágenes estratégicas y servicios clave.</p>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3>4. Estrategia de precios</h3>
+        <p>Configuramos un calendario dinámico y competitivo según tus objetivos.</p>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3>5. Publicación y visibilidad</h3>
+        <p>Lanzamos tu anuncio y lo posicionamos para que se destaque entre los demás.</p>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+        <h3>6. Seguimiento y mejora</h3>
+        <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2>¿Funcionará esto con tu propiedad o experiencia?</h2>
+  <p>Los resultados hablan por sí solos.</p>
+  <div class="cards">
+    <div class="card" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);"><strong>+65%</strong><br> de ocupación</div>
+    <div class="card" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);"><strong>+850%</strong><br> más visitas en Airbnb</div>
+    <div class="card" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);"><strong>+35</strong><br> valoraciones 5 estrellas</div>
+    <div class="card" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);"><strong>72 hs</strong><br> primeras reservas</div>
+    <div class="card" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);"><strong>+8500 USD</strong><br> en 4 meses</div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Lo dicen ellos, no nosotros</span></h2>
+  <div style="display: flex; flex-direction: row; gap: 2rem; flex-wrap: wrap; justify-content: space-between;">
+    <div class="testimonio" style="flex: 1 1 30%; background-color: #111; padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      
+      <img src="https://i.postimg.cc/SNrR2sf5/DDD.jpg" alt="Foto de Roberto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+      <h3 style="color: var(--dorado); font-size: 1.1rem;">Roberto – Loft en Manzanillo, México</h3>
+      <p style="font-style: italic;">“Antes de trabajar con ClimberHost no sabía cómo funcionaba Airbnb... ¡ahora soy Superhost!”</p>
+      <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
+    </div>
+    <div class="testimonio" style="flex: 1 1 30%; background-color: #111; padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <img src="https://i.postimg.cc/KzH4Ys7Y/7a3648ed-7c31-4b2b-a3fe-619ee1874447.jpg" alt="Foto de Fani" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+      <h3 style="color: var(--dorado); font-size: 1.1rem;">Fani – Cabaña en El Trapiche, San Luis</h3>
+      <p style="font-style: italic;">“ClimberHost se encargó de todo: publicarla en Airbnb, sacar fotos, hacer la descripción. En muy poco tiempo empecé a recibir reservas, tengo muchas reseñas lindas y hasta me marcaron como alojamiento favorito entre huéspedes.”</p>
+      <a href="https://www.airbnb.com.ar/rooms/1024540651844368522" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
+    </div>
+    <div class="testimonio" style="flex: 1 1 30%; background-color: #111; padding: 1.5rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <img src="https://i.postimg.cc/tgmV1Tpy/Whats-App-Image-2025-04-15-at-7-13-10-PM.jpg" alt="Foto de Agustín" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+      <h3 style="color: var(--dorado); font-size: 1.1rem;">Agustín – Monoambiente en Palermo, Buenos Aires</h3>
+      <p style="font-style: italic;">“Firmé un contrato por un depto pero no iba a estar en verano y tenía que seguir pagándolo. Con ClimberHost lo subalquilé por Airbnb con autorización y en 3 meses no solo cubrí el alquiler, ¡gané plata! El depto se posicionó muy bien, las fotos y la descripción estaban muy bien hechas y las reservas llegaban solas.”</p>
+      <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Propiedades destacadas</span></h2>
+  <div class="roadmap-carousel">
+    <div class="carousel-buttons">
+      <button id="prevSlide">◀</button>
+      <button id="nextSlide">▶</button>
+    </div>
+    <div class="roadmap-carousel-track">
+  
+  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
+    <img src="https://i.postimg.cc/HnmWjDcd/Whats-App-Image-2025-04-15-at-7-20-25-PM.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+    <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+  </div>
+  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+    <img src="https://i.postimg.cc/pdPBQywF/image-5.jpg" alt="Cabaña Potrero 4 personas" style="width: 100%; height: auto; object-fit: cover; border-radius: 6px;">
+    <a href="https://www.airbnb.com.ar/rooms/1357424256775841576?guests=1&adults=1&s=67&unique_share_id=3cc0ce6c-0ec1-4285-b096-efdab7555623" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (4 personas)</a>
+  </div>
+  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+        <img src="https://i.postimg.cc/mrFTw27T/image-2.jpg" alt="Cabaña Siete Cajones" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1024540651844368522" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Siete Cajones</a>
+      </div>
+      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+        <img src="https://i.postimg.cc/Mp7Dj1Fw/image-4.jpg" alt="Cabaña Potrero 6 personas" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1329929810347931419?guests=1&adults=1&s=67&unique_share_id=3a894606-20db-471a-a860-e767e7b2a549" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (6 personas)</a>
+      </div>
+    <img src="https://i.postimg.cc/jdgKYJXs/image-3.jpg" alt="Depto en palermo hollywood" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+    <a href="https://www.airbnb.com.ar/rooms/1304382768743098142?guests=1&adults=1&s=67&unique_share_id=14cb4858-255f-4898-a4cc-e5f507fcf05d" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">departamento palermo hollywood</a>
+</div>
+   
+</section>
+
+<section class="container section" style="text-align: center; background-color: rgba(0, 0, 0, 0.6); padding: 5rem 1rem; border-radius: 12px;">
+  <h2 style="color: var(--dorado); font-size: 2rem; margin-bottom: 2rem;">¿Qué nos hace diferentes?</h2>
+  <img src="https://i.postimg.cc/s2HNHp9W/TRIANGULO.png" alt="Triángulo de Valor ClimberHost" style="width: 100%; max-width: 1000px; height: auto; display: block; margin: 0 auto;">
+</section>
+
+
+  
+<section class="checklist container" style="margin-top: 6rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Solo cobramos si generás reservas</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Estrategia 100% personalizada</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Conocimiento profundo del algoritmo</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Automatización con atención humana</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Delegamos y controlamos personal de limpieza</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Activamos los reclamos del seguro de Airbnb</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Onboarding ágil y guiado</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Avisos por cada etapa completada</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Soporte al cliente 24/7</div>
+  <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Reportes mensuales de resultados</div>
+</section>
+
+<section class="calendly-section container" id="calendly">
+  <p>¿Tenés una propiedad o experiencia que querés potenciar?</p>
+  <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank">Agendar llamada ↗</a>
+</section>
+
+  <footer>
+    ClimberHost © 2025 – Todos los derechos reservados<br>
+    Instagram: <a href="https://www.instagram.com/climberhost" target="_blank" style="color: var(--dorado)">@climberhost</a>
+  </footer>
 </body>
 </html>
