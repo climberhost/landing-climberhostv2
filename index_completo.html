@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClimberHost - Administración de Propiedades en Airbnb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --negro: #000000;
+      --dorado: #BFA066;
+      --blanco: #FFFFFF;
+      --dorado-claro: #DAC9A6;
+      --gris-claro: #F2F2F2;
+      --cian: #00CFFF;
+    }
+
+    body {
+      background-image: url('https://i.postimg.cc/ZR9DGCVM/KKKKKKKKK.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-color: var(--negro);
+      color: var(--blanco);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dorado);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .logo-header {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0 0 0;
+    }
+
+    .logo-header img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .cta-button {
+      background-color: var(--dorado);
+      color: var(--negro);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .section {
+      margin-top: 4rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      color: var(--blanco);
+      border: 1px solid var(--dorado);
+      box-shadow: 0 0 12px var(--dorado);
+      text-align: center;
+    }
+
+    .card strong {
+      color: var(--cian);
+      font-size: 1.4rem;
+    }
+
+    .testimonio {
+      margin-bottom: 2rem;
+    }
+
+    .triangle-section {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .triangle-section .column {
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .triangle-section h3 {
+      color: var(--dorado);
+    }
+
+    .check-item {
+      border: 1px solid var(--dorado);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 12px var(--dorado);
+      margin: 0.5rem;
+      background-color: #111;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .gallery-item a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    .calendly-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #111;
+      padding: 2rem 1.5rem;
+      border-radius: 10px;
+      margin-top: 4rem;
+    }
+
+    .calendly-section p {
+      flex: 1;
+      font-size: 1.1rem;
+    }
+
+    .calendly-section a {
+      background-color: var(--dorado);
+      color: var(--negro);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #111;
+      font-size: 0.9rem;
+      color: var(--dorado-claro);
+    }
+
+    .roadmap-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-carousel-track {
+      display: flex;
+      gap: 1rem;
+      animation: scrollLoop 30s linear infinite;
+    }
+
+    .roadmap-carousel .card:hover {
+      background-color: var(--dorado);
+      color: var(--negro);
+      transform: scale(1.05);
+    }
+
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 1rem;
+    }
+
+    .carousel-buttons button {
+      background-color: var(--dorado);
+      border: none;
+      color: var(--negro);
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.querySelector(".roadmap-carousel-track");
+      const prevBtn = document.querySelector("#prevSlide");
+      const nextBtn = document.querySelector("#nextSlide");
+
+      let autoplayInterval;
+      let autoplayStopped = false;
+
+      function startAutoplay() {
+        if (autoplayStopped) return;
+        autoplayInterval = setInterval(() => {
+          track.append(track.firstElementChild);
+        }, 3000);
+      }
+
+      function stopAutoplay() {
+        clearInterval(autoplayInterval);
+        autoplayStopped = true;
+        track.style.animation = "none";
+      }
+
+      track.addEventListener("mouseover", stopAutoplay);
+      prevBtn.addEventListener("click", () => {
+        track.prepend(track.lastElementChild);
+        stopAutoplay();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        track.append(track.firstElementChild);
+        stopAutoplay();
+      });
+
+      startAutoplay();
+    });
+  </script>
+</head>
+<body>
+  <!-- Aquí iría el contenido del <body> que me pasaste -->
+</body>
+</html>
