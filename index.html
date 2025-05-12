@@ -315,14 +315,12 @@
   <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--dorado-claro); margin-bottom: 1rem;">
     ¿Querés entender cómo funciona ClimberHost?
   </h2>
-
-  <div style="max-width: 900px; margin: 0 auto; border: 2px solid var(--dorado-claro); border-radius: 12px; overflow: hidden; box-shadow: 0 0 24px rgba(191,160,102,0.3);">
-    <video id="vslVideo" autoplay playsinline controls style="width: 100%; height: auto; cursor: pointer;">
-      <source src="video-vsl-climberhost.mp4" type="video/mp4">
-      Tu navegador no soporta el video.
-    </video>
-  </div>
-</section>
+<div style="max-width: 900px; margin: 0 auto; padding: 5px; border-radius: 20px; background: linear-gradient(145deg, #BFA066, #000000, #BFA066); box-shadow: 0 0 25px #BFA066; position: relative;">
+  <video id="vslVideo" autoplay muted playsinline style="width: 100%; height: auto; border-radius: 16px; display: block; cursor: pointer;">
+    <source src="video-vsl-climberhost.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -336,18 +334,6 @@
     });
   });
 
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const video = document.getElementById('vslVideo');
-    video.addEventListener('click', function () {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    });
-  });
 </script>
 
 
