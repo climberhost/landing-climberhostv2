@@ -239,25 +239,28 @@
   100% {
     transform: translateX(-50%);
   }
-
-  .flip-grid {
+  
+.flip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
   justify-items: center;
+  margin-top: 2rem;
 }
 
 .flip-card {
+  background-color: transparent;
   width: 100%;
   max-width: 240px;
+  height: 260px;
   perspective: 1000px;
 }
 
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 100%;
+  text-align: center;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
@@ -279,33 +282,30 @@
   text-align: center;
   border: 1px solid var(--dorado);
   box-shadow: 0 0 14px var(--dorado);
+}
+
+.flip-front {
   background-color: #111;
 }
 
 .flip-front h3 {
-  font-size: 1.3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  font-size: 1.4rem;
   color: var(--dorado);
-  text-shadow: 0 0 4px var(--dorado);
+  text-shadow: 0 0 6px var(--dorado);
+}
+
+.flip-back {
+  background-color: var(--negro);
+  transform: rotateY(180deg);
 }
 
 .flip-back p {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  line-height: 1.4;
   color: var(--blanco);
-}
-
-.flip-back {
-  transform: rotateY(180deg);
-
-}
-
-  .roadmap-carousel {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+  line-height: 1.5;
 }
 
 .roadmap-carousel-track {
@@ -438,75 +438,70 @@
       <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
     </div>
 </section>
- <section class="container">
-    <h2>¿Cómo lo hacemos?</h2>
-    <div class="flip-grid">
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>1. Recolección de información</h3>
-          </div>
-          <div class="flip-back">
-            <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.<br><br>Entendemos tu situación inicial para construir desde una base sólida.</p>
-          </div>
+<section class="container">
+  <h2 style="color: var(--dorado); font-family: 'Montserrat', sans-serif; font-size: 2rem; text-align: center;">¿Cómo lo hacemos?</h2>
+  <div class="flip-grid">
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>1. Recolección de información</h3>
         </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>2. Estudio personalizado</h3>
-          </div>
-          <div class="flip-back">
-            <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>3. Optimización del anuncio</h3>
-          </div>
-          <div class="flip-back">
-            <p>Creamos un anuncio atractivo con imágenes, copy persuasivo y narrativa clara para captar más reservas.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>4. Estrategia de precios</h3>
-          </div>
-          <div class="flip-back">
-            <p>Configuramos un calendario dinámico y competitivo según tus objetivos para maximizar tus ingresos.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>5. Publicación y visibilidad</h3>
-          </div>
-          <div class="flip-back">
-            <p>Lanzamos y posicionamos tu anuncio para que se destaque frente a la competencia.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-inner">
-          <div class="flip-front">
-            <h3>6. Seguimiento y mejora</h3>
-          </div>
-          <div class="flip-back">
-            <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
-          </div>
+        <div class="flip-back">
+          <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
         </div>
       </div>
     </div>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>2. Estudio personalizado</h3>
+        </div>
+        <div class="flip-back">
+          <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>3. Optimización del anuncio</h3>
+        </div>
+        <div class="flip-back">
+          <p>Creamos un anuncio atractivo con imágenes, copy persuasivo y narrativa clara para captar más reservas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>4. Estrategia de precios</h3>
+        </div>
+        <div class="flip-back">
+          <p>Configuramos un calendario dinámico y competitivo según tus objetivos para maximizar tus ingresos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>5. Publicación y visibilidad</h3>
+        </div>
+        <div class="flip-back">
+          <p>Lanzamos y posicionamos tu anuncio para que se destaque frente a la competencia.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>6. Seguimiento y mejora</h3>
+        </div>
+        <div class="flip-back">
+          <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="container section">
