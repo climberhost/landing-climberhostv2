@@ -211,7 +211,53 @@
     }
   </style>
 <style>
-   .roadmap-carousel {
+  .flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  color: var(--blanco);
+  border: 1px solid var(--dorado);
+  box-shadow: 0 0 12px var(--dorado);
+  border-radius: 10px;
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+  
+  .roadmap-carousel {
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -240,32 +286,6 @@
   text-align: center;
 }
 
-@keyframes scrollLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-  
-  .roadmap-carousel {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .roadmap-carousel-track {
-      display: flex;
-      gap: 1rem;
-      animation: scrollLoop 30s linear infinite;
-    }
-
-    $1
-  border: 1px solid var(--dorado);
-  box-shadow: 0 0 12px var(--dorado);
-}
-
     .roadmap-carousel .card:hover {
       background-color: var(--dorado);
       color: var(--negro);
@@ -277,25 +297,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    .carousel-buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 1rem;
-    }
-
-    .carousel-buttons button {
-      background-color: var(--dorado);
-      border: none;
-      color: var(--negro);
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -406,43 +407,86 @@
       <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
     </div>
 </section>
-
-  <section class="container section">
+<section class="container section">
   <h2 style="background-color: rgba(0, 0, 0, 0.6); padding: 0.75rem 1rem; border-radius: 8px; display: inline-block;">¿Cómo lo hacemos?</h2>
-  <div class="roadmap-carousel">
-    <div class="carousel-buttons">
-      <button id="prevSlide">◀</button>
-      <button id="nextSlide">▶</button>
-    </div>
-    <div class="roadmap-carousel-track">
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3 style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 6px; display: inline-block;">1. Recolección de información</h3>
-        <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
-      </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3>2. Estudio personalizado</h3>
-        <p>Analizamos el mercado, hacemos un analisis FODA y detectamos tu huésped Potencial.</p>
-      </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3>3. Optimización del anuncio</h3>
-        <p>Creamos un anuncio que cautiva: imágenes atractivas, copy persuasivo apuntado a tu huésped potencial y una narrativa que transmite el valor de alojarse en tu propiedad.</p>
-      </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3>4. Estrategia de precios</h3>
-        <p>Configuramos un calendario dinámico y competitivo según tus objetivos.</p>
-      </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3>5. Publicación y visibilidad</h3>
-        <p>Lanzamos tu anuncio y lo posicionamos para que se destaque entre los demás.</p>
-      </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-        <h3>6. Seguimiento y mejora</h3>
-        <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
+  <div class="flip-grid">
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>1. Recolección de información</h3>
+          <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
+        </div>
+        <div class="flip-back">
+          <p>Entendemos tu situación inicial para construir desde una base sólida.</p>
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>2. Estudio personalizado</h3>
+          <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
+        </div>
+        <div class="flip-back">
+          <p>Identificamos oportunidades únicas para tu propiedad.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>3. Optimización del anuncio</h3>
+          <p>Creamos un anuncio atractivo con imágenes y copy persuasivo.</p>
+        </div>
+        <div class="flip-back">
+          <p>Generamos impacto visual y textual para captar más reservas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>4. Estrategia de precios</h3>
+          <p>Configuramos un calendario dinámico y competitivo según tus objetivos.</p>
+        </div>
+        <div class="flip-back">
+          <p>Adaptamos tus precios día a día para maximizar tus ingresos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>5. Publicación y visibilidad</h3>
+          <p>Lanzamos y posicionamos tu anuncio para destacar frente a la competencia.</p>
+        </div>
+        <div class="flip-back">
+          <p>Nos aseguramos de que los viajeros te encuentren fácilmente.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>6. Seguimiento y mejora</h3>
+          <p>Monitoreamos resultados, ajustamos y damos soporte continuo.</p>
+        </div>
+        <div class="flip-back">
+          <p>Te acompañamos con reportes y ajustes para escalar tu éxito.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+ 
 <section class="container section">
   <h2><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Nuestras propiedades</span></h2>
   <div class="roadmap-carousel">
