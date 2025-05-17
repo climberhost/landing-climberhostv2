@@ -211,7 +211,46 @@
     }
   </style>
 <style>
-    .roadmap-carousel {
+   .roadmap-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.roadmap-carousel-track {
+  display: flex;
+  animation: scrollLoop 60s linear infinite;
+  width: max-content;
+}
+
+.roadmap-carousel-track:hover {
+  animation-play-state: paused; /* Pausa al pasar el mouse */
+}
+
+.roadmap-carousel .card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 1.5rem;
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: var(--blanco);
+  border: 1px solid var(--dorado);
+  box-shadow: 0 0 12px var(--dorado);
+  text-align: center;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+  
+  .roadmap-carousel {
       position: relative;
       overflow: hidden;
     }
@@ -404,35 +443,67 @@
   </div>
   </div>
 </section>
-
 <section class="container section">
   <h2><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Nuestras propiedades</span></h2>
-  <div class="roadmap-carousel"auto>
-      
-    </div>
+  <div class="roadmap-carousel">
     <div class="roadmap-carousel-track">
-  
-  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado);">
-    <img src="https://i.postimg.cc/L8xnChP4/Whats-App-Image-2025-05-16-at-7-58-13-PM-2.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
-    <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
-  </div>
-  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
-    <img src="https://i.postimg.cc/pdPBQywF/image-5.jpg" alt="Cabaña Potrero 4 personas" style="width: 100%; height: auto; object-fit: cover; border-radius: 6px;">
-    <a href="https://www.airbnb.com.ar/rooms/1357424256775841576?guests=1&adults=1&s=67&unique_share_id=3cc0ce6c-0ec1-4285-b096-efdab7555623" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (4 personas)</a>
-  </div>
-  <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+      
+      <!-- Tarjetas originales -->
+      <div class="card">
+        <img src="https://i.postimg.cc/L8xnChP4/Whats-App-Image-2025-05-16-at-7-58-13-PM-2.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/pdPBQywF/image-5.jpg" alt="Cabaña Potrero 4 personas" style="width: 100%; height: auto; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1357424256775841576" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (4 personas)</a>
+      </div>
+
+      <div class="card">
         <img src="https://i.postimg.cc/mrFTw27T/image-2.jpg" alt="Cabaña Siete Cajones" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
         <a href="https://www.airbnb.com.ar/rooms/1024540651844368522" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Siete Cajones</a>
       </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
+
+      <div class="card">
         <img src="https://i.postimg.cc/Mp7Dj1Fw/image-4.jpg" alt="Cabaña Potrero 6 personas" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
-        <a href="https://www.airbnb.com.ar/rooms/1329929810347931419?guests=1&adults=1&s=67&unique_share_id=3a894606-20db-471a-a860-e767e7b2a549" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (6 personas)</a>
+        <a href="https://www.airbnb.com.ar/rooms/1329929810347931419" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (6 personas)</a>
       </div>
-      <div class="card" style="background-color: #111; padding: 1.5rem; border-radius: 10px; flex: 1 1 250px; min-width: 250px; max-width: 250px; color: var(--blanco); border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); text-align: center;">
-    <img src="https://i.postimg.cc/jdgKYJXs/image-3.jpg" alt="Depto en palermo hollywood" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
-    <a href="https://www.airbnb.com.ar/rooms/1304382768743098142?guests=1&adults=1&s=67&unique_share_id=14cb4858-255f-4898-a4cc-e5f507fcf05d" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">departamento palermo hollywood</a>
-</div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/jdgKYJXs/image-3.jpg" alt="Depto en palermo hollywood" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">departamento palermo hollywood</a>
+      </div>
+
+      <!-- Duplicado -->
+      <div class="card">
+        <img src="https://i.postimg.cc/L8xnChP4/Whats-App-Image-2025-05-16-at-7-58-13-PM-2.jpg" alt="Loft en Manzanillo" style="width: 100%; height: auto; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1284277836827709652" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Loft en Manzanillo</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/pdPBQywF/image-5.jpg" alt="Cabaña Potrero 4 personas" style="width: 100%; height: auto; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1357424256775841576" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (4 personas)</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/mrFTw27T/image-2.jpg" alt="Cabaña Siete Cajones" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1024540651844368522" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Siete Cajones</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/Mp7Dj1Fw/image-4.jpg" alt="Cabaña Potrero 6 personas" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1329929810347931419" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">Cabaña Potrero (6 personas)</a>
+      </div>
+
+      <div class="card">
+        <img src="https://i.postimg.cc/jdgKYJXs/image-3.jpg" alt="Depto en palermo hollywood" style="width: 100%; height: 170px; object-fit: cover; border-radius: 6px;">
+        <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; display: block; margin-top: 0.5rem;">departamento palermo hollywood</a>
+      </div>
+
+    </div>
+  </div>
 </section>
+
 <section class="container section">
   <h2>¿Funcionará esto con tu propiedad o experiencia?</h2>
   <p>Los resultados hablan por sí solos.</p>
