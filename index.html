@@ -239,10 +239,10 @@
   100% {
     transform: translateX(-50%);
   }
-/* SECCIÓN ¿Cómo lo hacemos? (REEMPLAZADO Y CORREGIDO) */
-.flip-grid {
+
+  .flip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
   justify-items: center;
@@ -280,27 +280,26 @@
   border: 1px solid var(--dorado);
   box-shadow: 0 0 14px var(--dorado);
   background-color: #111;
-  color: var(--blanco);
-  transition: background-color 0.3s, transform 0.8s;
 }
 
 .flip-front h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: var(--dorado);
-  text-shadow: 0 0 6px #BFA066, 0 0 12px #DAC9A6;
+  text-shadow: 0 0 4px var(--dorado);
+}
+
+.flip-back p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
   line-height: 1.4;
+  color: var(--blanco);
 }
 
 .flip-back {
   transform: rotateY(180deg);
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--blanco);
-}
-/* FIN DE AJUSTES */
+
 }
 
   .roadmap-carousel {
