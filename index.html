@@ -242,10 +242,10 @@
   
 .flip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   justify-items: center;
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .flip-card {
@@ -281,7 +281,7 @@
   justify-content: center;
   text-align: center;
   border: 1px solid var(--dorado);
-  box-shadow: 0 0 14px var(--dorado);
+  box-shadow: 0 0 14px rgba(191, 160, 102, 0.3);
 }
 
 .flip-front {
@@ -290,15 +290,16 @@
 
 .flip-front h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.4rem;
   color: var(--dorado);
-  text-shadow: 0 0 6px var(--dorado);
+  text-shadow: 0 0 6px rgba(191, 160, 102, 0.6);
 }
 
 .flip-back {
   background-color: var(--negro);
   transform: rotateY(180deg);
+  border: 1px solid var(--dorado);
 }
 
 .flip-back p {
@@ -306,6 +307,8 @@
   font-size: 1rem;
   color: var(--blanco);
   line-height: 1.5;
+}
+
 }
 
 .roadmap-carousel-track {
@@ -438,7 +441,7 @@
       <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
     </div>
 </section>
-<section class="container">
+<section class="container section">
   <h2 style="color: var(--dorado); font-family: 'Montserrat', sans-serif; font-size: 2rem; text-align: center;">¿Cómo lo hacemos?</h2>
   <div class="flip-grid">
     <div class="flip-card">
@@ -502,6 +505,8 @@
       </div>
     </div>
   </div>
+</section>
+
 </section>
 
 <section class="container section">
