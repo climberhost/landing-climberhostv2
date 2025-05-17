@@ -249,11 +249,12 @@
   }
 }
 
-  .flip-grid {
+ .flip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+  justify-items: center;
 }
 
 .flip-card {
@@ -339,14 +340,9 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".roadmap-carousel-track");
-    const prevBtn = document.querySelector("#prevSlide");
-    const nextBtn = document.querySelector("#nextSlide");
-
     let autoplayInterval;
-    let autoplayStopped = false;
 
     function startAutoplay() {
-      if (autoplayStopped) return;
       autoplayInterval = setInterval(() => {
         track.append(track.firstElementChild);
       }, 3000);
@@ -354,24 +350,15 @@
 
     function stopAutoplay() {
       clearInterval(autoplayInterval);
-      autoplayStopped = true;
-      track.style.animation = "none";
     }
 
     track.addEventListener("mouseover", stopAutoplay);
-    prevBtn.addEventListener("click", () => {
-      track.prepend(track.lastElementChild);
-      stopAutoplay();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      track.append(track.firstElementChild);
-      stopAutoplay();
-    });
+    track.addEventListener("mouseleave", startAutoplay);
 
     startAutoplay();
   });
 </script>
+
 </head>
 <body>
   <section style="background-color: #111; padding: 1.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--dorado);">
@@ -453,10 +440,10 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>1. Recolección de información</h3>
-          <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
         </div>
         <div class="flip-back">
-          <p>Entendemos tu situación inicial para construir desde una base sólida.</p>
+          <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.<br><br>
+          Entendemos tu situación inicial para construir desde una base sólida.</p>
         </div>
       </div>
     </div>
@@ -465,10 +452,9 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>2. Estudio personalizado</h3>
-          <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
         </div>
         <div class="flip-back">
-          <p>Identificamos oportunidades únicas para tu propiedad.</p>
+          <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
         </div>
       </div>
     </div>
@@ -477,10 +463,9 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>3. Optimización del anuncio</h3>
-          <p>Creamos un anuncio atractivo con imágenes y copy persuasivo.</p>
         </div>
         <div class="flip-back">
-          <p>Generamos impacto visual y textual para captar más reservas.</p>
+          <p>Creamos un anuncio atractivo con imágenes, copy persuasivo y narrativa clara para captar más reservas.</p>
         </div>
       </div>
     </div>
@@ -489,10 +474,9 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>4. Estrategia de precios</h3>
-          <p>Configuramos un calendario dinámico y competitivo según tus objetivos.</p>
         </div>
         <div class="flip-back">
-          <p>Adaptamos tus precios día a día para maximizar tus ingresos.</p>
+          <p>Configuramos un calendario dinámico y competitivo según tus objetivos para maximizar tus ingresos.</p>
         </div>
       </div>
     </div>
@@ -501,10 +485,9 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>5. Publicación y visibilidad</h3>
-          <p>Lanzamos y posicionamos tu anuncio para destacar frente a la competencia.</p>
         </div>
         <div class="flip-back">
-          <p>Nos aseguramos de que los viajeros te encuentren fácilmente.</p>
+          <p>Lanzamos y posicionamos tu anuncio para que se destaque frente a la competencia.</p>
         </div>
       </div>
     </div>
@@ -513,15 +496,15 @@
       <div class="flip-inner">
         <div class="flip-front">
           <h3>6. Seguimiento y mejora</h3>
-          <p>Monitoreamos resultados, ajustamos y damos soporte continuo.</p>
         </div>
         <div class="flip-back">
-          <p>Te acompañamos con reportes y ajustes para escalar tu éxito.</p>
+          <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
         </div>
       </div>
     </div>
 
   </div>
+
 </section>
 
  
