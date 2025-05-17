@@ -248,24 +248,25 @@
     transform: translateX(-50%);
   }
 }
-
- .flip-grid {
+.flip-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
   justify-items: center;
 }
 
 .flip-card {
+  width: 100%;
+  max-width: 300px;
   perspective: 1000px;
 }
 
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 250px;
-  transition: transform 0.8s;
+  height: 280px;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
 
@@ -277,25 +278,33 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #111;
-  color: var(--blanco);
-  border: 1px solid var(--dorado);
-  box-shadow: 0 0 12px var(--dorado);
-  border-radius: 10px;
+  border-radius: 12px;
   backface-visibility: hidden;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  border: 1px solid var(--dorado);
+  box-shadow: 0 0 12px var(--dorado);
+  background-color: #111;
+  color: var(--blanco);
+  transition: background-color 0.3s, transform 0.8s;
+}
+
+.flip-front h3 {
+  font-size: 1.1rem;
+  color: var(--dorado);
+  font-weight: bold;
 }
 
 .flip-back {
   transform: rotateY(180deg);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-  
+
   .roadmap-carousel {
   overflow: hidden;
   position: relative;
@@ -504,10 +513,8 @@
     </div>
 
   </div>
-
 </section>
 
- 
 <section class="container section">
   <h2><span style="background-color: rgba(0, 0, 0, 0.6); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block;">Nuestras propiedades</span></h2>
   <div class="roadmap-carousel">
