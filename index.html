@@ -198,6 +198,54 @@
       font-size: 0.9rem;
       color: var(--dorado-claro);
     }
+    .calendly-section-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #BFA066;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+.calendly-section-custom p {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+}
+.calendly-section-custom a {
+  background-color: #BFA066;
+  color: #000;
+  text-decoration: none;
+  padding: 1.6rem 3rem;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 0 18px #BFA066;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+.calendly-section-custom a span:first-child {
+  font-size: 1.7rem;
+}
+.calendly-section-custom a span.arrow {
+  font-size: 2.1rem;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+}
+.calendly-section-custom a span.small-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  display: block;
+  margin-top: 0.4rem;
+}
   </style>
 <style>
   .roadmap-carousel {
@@ -562,22 +610,14 @@
   <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Soporte al cliente 24/7</div>
   <div class="check-item" style="border: 1px solid var(--dorado); box-shadow: 0 0 12px var(--dorado); padding: 1rem 1.5rem; border-radius: 8px; background-color: #111;">✅ Reportes mensuales de resultados</div>
 </section>
-
-<section class="calendly-section container" id="calendly">
-  <p style="font-size: 1.3rem; white-space: nowrap;">¿Tenés una propiedad o experiencia que querés potenciar?
-  </p>
-  <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank"
-     style="background-color: var(--dorado); color: var(--negro); text-decoration: none; border-radius: 25px; box-shadow: 0 0 18px var(--dorado); padding: 1.8rem 3.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; max-width: 370px; width: 100%; text-align: center;">
-  
-    <span style="font-size: 1.6rem;">
-      Agendar llamada <span style="font-size: 1.8rem; vertical-align: middle;">↗</span>
-    </span>
-    <span style="font-size: 0.9rem; color: var(--blanco); font-weight: 500;">
-      (cupos limitados)
-    </span>
+<section class="calendly-section-custom">
+  <p>¿Tenés una propiedad o experiencia que querés potenciar?</p>
+  <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank">
+    <span>Agendar llamada</span><span class="arrow">↗</span>
+    <span class="small-text">(cupos limitados)</span>
   </a>
 </section>
-
+  
   <footer>
     ClimberHost © 2025 – Todos los derechos reservados<br>
     Instagram: <a href="https://www.instagram.com/climberhost" target="_blank" style="color: var(--dorado)">@climberhost</a>
