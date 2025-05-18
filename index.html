@@ -349,6 +349,21 @@
       grid-template-columns: 1fr;
     }
   }
+  .btn-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  background-color: #25D366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+}
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -375,7 +390,7 @@
 </head>
 <body>
   <section style="background-color: #111; padding: 1.5rem 2.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--dorado);">
-  <span style="color: var(--blanco); font-size: 0.95rem;">¿Necesitás ayuda? <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Hacé click para contactarnos</a></span>
+  <span style="color: var(--blanco); font-size: 0.95rem;">¿Necesitás ayuda? <a href="https://wa.me/5492665031382?text=Buenas,%20vengo%20de%20la%20landing%20page%20y%20me%20gustar%C3%ADa%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" style="color: var(--dorado); text-decoration: none; font-weight: bold;">Hacé click para contactarnos</a></span>
   <img src="https://i.postimg.cc/L5VNz2nD/logo-principal.png" alt="Logo ClimberHost" style="height: 75px;">
   <a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank" style="color: var(--dorado); font-weight: bold; text-decoration: none; font-size: 0.95rem;">Agendá tu llamada estratégica gratuita ↗</a>
 </section>
@@ -557,5 +572,14 @@
     ClimberHost © 2025 – Todos los derechos reservados<br>
     Instagram: <a href="https://www.instagram.com/climberhost" target="_blank" style="color: var(--dorado)">@climberhost</a>
   </footer>
+  <a href="https://wa.me/5492665031382?text=Buenas,%20vengo%20de%20la%20landing%20page%20y%20me%20gustar%C3%ADa%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios"
+   class="btn-whatsapp"
+   target="_blank"
+   aria-label="WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+       alt="WhatsApp"
+       style="width: 50px; height: 50px;">
+</a>
+
 </body>
 </html>
