@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ClimberHost - Administración de Propiedades en Airbnb</title>
   <!-- SEO básico -->
 <meta name="description" content="Multiplicá tus ingresos con ClimberHost. Administración profesional de propiedades en Airbnb: automatización, posicionamiento y soporte completo.">
@@ -412,6 +412,122 @@
 .btn-whatsapp:hover {
   transform: scale(1.1);
 }
+  @media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+    background-attachment: scroll;
+  }
+
+  section, .container {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 1.4rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .calendly-section-custom {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .calendly-section-custom p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .calendly-section-custom a {
+    width: 100%;
+    padding: 1.4rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .calendly-section-custom a span.small-text {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  .flip-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .testimonio {
+    flex: 1 1 100% !important;
+  }
+
+  .testimonio img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .roadmap-carousel-track {
+    animation-duration: 90s;
+  }
+
+  .checklist.container {
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 1.5rem;
+  }
+
+  .btn-whatsapp {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+  }
+
+  .btn-whatsapp img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero {
+    padding: 2rem 0.5rem !important;
+  }
+
+  .roadmap-carousel .card {
+    width: 200px;
+    margin-right: 1rem;
+  }
+
+  .triangle-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .triangle-section .column {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
