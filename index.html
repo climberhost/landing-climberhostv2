@@ -364,6 +364,49 @@
 .btn-whatsapp:hover {
   transform: scale(1.1);
 }
+  .cta-agendar-btn {
+  background-color: var(--dorado);
+  color: var(--negro);
+  text-decoration: none;
+  padding: 2rem 4rem;
+  border-radius: 25px;
+  box-shadow: 0 0 20px var(--dorado);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.cta-agendar-btn:hover {
+  transform: scale(1.03);
+}
+
+.cta-agendar-btn .main-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cta-agendar-btn .icon {
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
+
+.cta-agendar-btn .sub-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -565,26 +608,13 @@
 
 <section class="calendly-section container" id="calendly">
   <p style="font-size: 1.3rem; white-space: nowrap;">¿Tenés una propiedad o experiencia que querés potenciar?</p>
-</p>
-<a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" target="_blank" 
-   style="
-     background-color: var(--dorado); 
-     color: var(--negro); 
-     text-decoration: none; 
-     display: inline-block; 
-     padding: 2rem 4rem; 
-     border-radius: 25px; 
-     box-shadow: 0 0 20px var(--dorado); 
-     text-align: center;
-     width: 100%;
-     max-width: 420px;
-   ">
-  <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem;">Agendar llamada <span style="font-size: 1.8rem; vertical-align: middle;">↗</span>
-  </span><br><br>
-  <span style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1rem;">(cupos limitados)</span>
+<a href="https://calendly.com/mateooro-h34/sesion-estrategica-para-propiedades-gratis" 
+   target="_blank" 
+   class="cta-button">
+   <span class="main-text">Agendar llamada</span>
+   <span class="icon">↗</span>
+   <div class="sub-text">(cupos limitados)</div>
 </a>
-
-
 </section>
 
   <footer>
