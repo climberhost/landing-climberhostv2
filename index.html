@@ -238,77 +238,7 @@
   }
   100% {
     transform: translateX(-50%);
-  }
   
-.flip-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  padding-top: 2rem;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  max-width: 240px;
-  height: 260px;
-  perspective: 1000px;
-}
-
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front, .flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  backface-visibility: hidden;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid var(--dorado);
-  box-shadow: 0 0 14px rgba(191, 160, 102, 0.3);
-}
-
-.flip-front {
-  background-color: #111;
-}
-
-.flip-front h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--dorado);
-  text-shadow: 0 0 6px rgba(191, 160, 102, 0.6);
-}
-
-.flip-back {
-  background-color: var(--negro);
-  transform: rotateY(180deg);
-  border: 1px solid var(--dorado);
-}
-
-.flip-back p {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  color: var(--blanco);
-  line-height: 1.5;
-}
-
 }
 
 .roadmap-carousel-track {
@@ -344,7 +274,85 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+  <style>
+  .flip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    justify-content: center;
+    justify-items: center;
+  }
 
+  .flip-card {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 260px;
+    height: 280px;
+    margin-bottom: 2rem;
+  }
+
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid var(--dorado);
+    box-shadow: 0 0 20px 2px rgba(191, 160, 102, 0.5); /* brillo dorado */
+  }
+
+  .flip-front {
+    background-color: #111;
+  }
+
+  .flip-front h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dorado);
+    text-shadow: 0 0 8px rgba(191, 160, 102, 0.4);
+  }
+
+  .flip-back {
+    background-color: var(--negro);
+    transform: rotateY(180deg);
+  }
+
+  .flip-back p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: var(--blanco);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .flip-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .flip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -441,72 +449,16 @@
       <a href="https://www.airbnb.com.ar/rooms/1304382768743098142" target="_blank" style="color: var(--dorado); margin-top: 0.5rem;">🔗 Ver propiedad</a>
     </div>
 </section>
-<section class="container section">
-  <h2 style="color: var(--dorado); font-family: 'Montserrat', sans-serif; font-size: 2rem; text-align: center;">¿Cómo lo hacemos?</h2>
+<section class="container">
+  <h2>¿Cómo lo hacemos?</h2>
   <div class="flip-grid">
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>1. Recolección de información</h3>
-        </div>
-        <div class="flip-back">
-          <p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>2. Estudio personalizado</h3>
-        </div>
-        <div class="flip-back">
-          <p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>3. Optimización del anuncio</h3>
-        </div>
-        <div class="flip-back">
-          <p>Creamos un anuncio atractivo con imágenes, copy persuasivo y narrativa clara para captar más reservas.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>4. Estrategia de precios</h3>
-        </div>
-        <div class="flip-back">
-          <p>Configuramos un calendario dinámico y competitivo según tus objetivos para maximizar tus ingresos.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>5. Publicación y visibilidad</h3>
-        </div>
-        <div class="flip-back">
-          <p>Lanzamos y posicionamos tu anuncio para que se destaque frente a la competencia.</p>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <h3>6. Seguimiento y mejora</h3>
-        </div>
-        <div class="flip-back">
-          <p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p>
-        </div>
-      </div>
-    </div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>1. Recolección de información</h3></div><div class="flip-back"><p>Recopilamos todos los datos sobre tu alojamiento o experiencia y marcamos un rumbo claro.</p></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>2. Estudio personalizado</h3></div><div class="flip-back"><p>Analizamos el mercado, hacemos un análisis FODA y detectamos tu huésped potencial.</p></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>3. Optimización del anuncio</h3></div><div class="flip-back"><p>Creamos un anuncio atractivo con imágenes, copy persuasivo y narrativa clara para captar más reservas.</p></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>4. Estrategia de precios</h3></div><div class="flip-back"><p>Configuramos un calendario dinámico y competitivo según tus objetivos para maximizar tus ingresos.</p></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>5. Publicación y visibilidad</h3></div><div class="flip-back"><p>Lanzamos y posicionamos tu anuncio para que se destaque frente a la competencia.</p></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>6. Seguimiento y mejora</h3></div><div class="flip-back"><p>Monitoreamos resultados, ajustamos y damos soporte continuo para escalar tu éxito.</p></div></div></div>
   </div>
-</section>
-
 </section>
 
 <section class="container section">
