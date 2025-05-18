@@ -198,6 +198,26 @@
       font-size: 0.9rem;
       color: var(--dorado-claro);
     }
+    .social-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-footer img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-footer a:hover img {
+  transform: scale(1.2);
+  filter: brightness(0.8) invert(1) sepia(1) saturate(5) hue-rotate(20deg);
+}
+
     .calendly-section-custom {
   display: flex;
   justify-content: space-between;
@@ -786,7 +806,7 @@
   
   <footer>
     ClimberHost © 2025 – Todos los derechos reservados<br>
-    Instagram: <a href="https://www.instagram.com/climberhost" target="_blank" style="color: var(--dorado)">@climberhost</a>
+    </a>
     <div class="social-footer">
   <a href="https://www.instagram.com/climberhost/" target="_blank" aria-label="Instagram">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
